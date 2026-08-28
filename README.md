@@ -67,13 +67,13 @@ Result:
 | Product_ID | Product_Name | Category |
 | ------- | ------- | ------- |
 | 10-378-9729 | Cabbage | NULL |
-| 21-013-3508 | Cabbage | NULL |
-| 31-745-6850 | Cabbage | NULL |
-| 45-380-4627 | Cabbage | NULL |
-| 67-025-1245 | Cabbage | NULL |
-| 75-927-9108 | Cabbage | NULL |
-| 79-428-8753 | Cabbage | NULL |
-| 82-538-4809 | Cabbage | NULL |
+| 21-013-3508 | Cabbage | Fruits & Vegetables |
+| 31-745-6850 | Cabbage | Fruits & Vegetables |
+| 45-380-4627 | Cabbage | Fruits & Vegetables |
+| 67-025-1245 | Cabbage | Fruits & Vegetables |
+| 75-927-9108 | Cabbage | Fruits & Vegetables |
+| 79-428-8753 | Cabbage | Fruits & Vegetables |
+| 82-538-4809 | Cabbage | Fruits & Vegetables |
 
 Based on this match, the missing Category was imputed as 'Fruits & Vegetables' as below:
 ```sql
