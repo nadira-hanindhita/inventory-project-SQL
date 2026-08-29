@@ -2,7 +2,7 @@
 
 ## Data Understanding
 This project uses [Grocery Inventory and Sales Dataset](https://www.kaggle.com/datasets/salahuddinahmedshuvo/grocery-inventory-and-sales-dataset) from Kaggle.
-The dataset contains **990 records**, where each row represents a Stock Keeping Unit (SKU) covering product details, supplier info, inventory levels, sales perfomance, and lifetime cycle. The columns are as follows:
+The dataset contains **990 records**, where each row represents a Stock Keeping Unit (SKU) covering product details, supplier information, inventory levels, sales perfomance, and lifetime cycle. The columns are as follows:
 - Product_ID
 - Product_Name
 - Category
@@ -59,7 +59,7 @@ Result: A record with a NULL value in the Category column was identified.
 | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
 | 10-378-9729 | Cabbage | NULL | 83-941-9620 | Rooxo | 69 | 21 | 68 | 66.55 | 2024-12-23 | 2024-11-26 | 2024-09-21 | 2 Butterfield Pass | 36 | 35 | Discontinued |
 
-- The missing category were imputed based on the category of product with the same name
+- The missing category was imputed based on the category of product with the same name
 ```sql
 SELECT Product_ID, Product_Name, Category FROM inventory WHERE Product_Name = 'Cabbage';
 ```
