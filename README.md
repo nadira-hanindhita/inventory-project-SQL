@@ -111,4 +111,17 @@ Result :
 | 6 | Bakery | 10 |
 | 7 | Beverages | 8 |
 
-3. Which active products have reached or dropped below their reorder threshold and require immediate purchase orders?
+3. What are the top 5 high-demand active products that have reached or dropped below their reorder threshold and require immediate purchase orders?
+```sql
+SELECT TOP 5 * FROM inventory
+WHERE stock_quantity <= reorder_level AND status = 'Active'
+ORDER BY Sales_Volume DESC
+```
+Result:
+| Product_ID | Product_Name | Category | Supplier_ID | Supplier_Name| Stock_Quantity | Reorder_Level | Reorder_Quantity | Unit_Price | Date_Received | Last_Order_Date | Expiration_Date | Warehouse_Location | Sales_Volume | Inventory_Turnover_Rate | Status |
+| ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| 99-561-4871|Haddock|	Seafood|	04-786-5408|	Buzzdog|	17|	38|	93|	9.00|	2025-02-14|	2024-08-20|	2024-07-28|	952 Rowland Junction	100	63	Active
+02-575-1980	Plum	Fruits & Vegetables	61-100-8296	Yambee	11	58	32	4.00	2024-02-28	2024-07-09	2024-11-24	34832 Autumn Leaf Terrace	99	94	Active
+30-996-2526	Green Beans	Fruits & Vegetables	30-942-0054	Izio	86	90	39	2.10	2024-10-20	2024-02-28	2024-09-07	77 Monterey Avenue	98	85	Active
+98-235-2711	Asparagus	Fruits & Vegetables	23-052-4744	Devpoint	22	40	7	5.00	2024-09-12	2024-12-31	2025-01-26	5 Transport Pass	98	60	Active
+74-943-9034	White Bread	Bakery	15-739-5480	Tagfeed	30	91	34	2.50	2024-07-11	2024-11-18	2024-05-06	0 Saint Paul Center	97	88	Active
