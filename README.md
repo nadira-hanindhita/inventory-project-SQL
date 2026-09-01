@@ -82,4 +82,33 @@ SET Category = 'Fruits & Vegetables'
 WHERE Product_ID = '10-378-9729';
 ```
   
-  
+## SQL Analysis & Business Insights
+1. What is the total stock volume and total monetary valuation of our current inventory?
+```sql
+SELECT SUM(stock_quantity) AS total_stock, SUM(stock_quantity * unit_price) AS total_inventory_value
+FROM inventory;
+```
+Result:
+| | total_stock | total_inventory_value |
+| ------- | ------- | ------- |
+| 1 | 55053 | 332654.71 |
+
+2. What product categories does the inventory contain, and how many unique items are in each?
+```sql
+SELECT Category, Count(DISTINCT Product_Name) AS Product_Count
+FROM inventory
+GROUP BY Category
+ORDER BY Product_Count DESC;
+```
+Result : 
+| | Category | Product_Count |
+| ------- | ------- | ------- |
+| 1 | Fruits & Vegetables | 41 |
+| 2 | Dairy | 24 |
+| 3 | Grains & Pulses | 20 |
+| 4 | Oils & Fats	| 10 |
+| 5 | Seafood | 10 |
+| 6 | Bakery | 10 |
+| 7 | Beverages | 8 |
+
+3. Which active products have reached or dropped below their reorder threshold and require immediate purchase orders?
